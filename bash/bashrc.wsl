@@ -1,0 +1,69 @@
+# ██╗   ██╗██╗  ██╗███████╗
+# ╚██╗ ██╔╝██║  ██║╚══███╔╝
+#  ╚████╔╝ ███████║  ███╔╝ 
+#   ╚██╔╝  ╚════██║ ███╔╝  
+#    ██║        ██║███████╗
+#    ╚═╝        ╚═╝╚══════╝
+# Bash for WSL
+# Copy and add this file to: ~/.bashrc
+#
+# Need to install:
+#	exa - better ls
+#	nvm - for `node.js` management
+#	cargo - for `rust` programming
+#	xfce4 utilities - for a prompt like Linux apps in a GUI form
+#	neofetch - beautiful terminal print
+#	lolcat - beautiful neofetch
+#	nala - beautiful `apt` alternative
+#
+# Can install:
+#	starship prompt - very good terminal prompt
+#
+# Important: Change in the variable bellow to your WINDOWS user name
+
+user_name_windows="Yaniv Zalach"
+
+
+# Prompt
+# Basic prompt
+PS1="\[\033[1;32m\]\u\[\033[0m\]\[\033[32m\][\w]\[\033[0m\]\[\033[1;34m\]\$ \[\e[0m\]"
+# Starship prompt
+if command -v starship &> /dev/null; then
+	eval "$(starship init bash)"
+fi
+
+# NVM - nodejs
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Rust cargo
+. "$HOME/.cargo/env"
+
+# For the xming server - windows
+export DISPLAY=:0 
+
+# History limit
+export HISTSIZE=750
+
+# Aliases
+# LS (exa - rust version of ls)
+alias ls='exa -al --color=always --group-directories-first'
+alias ll='ls -alF'
+alias la='ls -A'
+alias dir='dir --color=auto'
+# GREP (with color)
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+# Specific alias for windows
+alias Wpwsh="powershell.exe"
+alias pwsh="pwsh.exe"
+alias ch="cd '/mnt/c/Users/$user_name_windows'"
+alias apps='setsid xfce4-appfinder'
+# Os
+alias sd='sudo shutdown -h now'
+alias u_u='sudo nala update && sudo nala upgrade'
+alias clean='clear;neofetch | lolcat'
+
+neofetch --ascii_distro

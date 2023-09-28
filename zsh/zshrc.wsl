@@ -1,0 +1,100 @@
+# ██╗   ██╗██╗  ██╗███████╗
+# ╚██╗ ██╔╝██║  ██║╚══███╔╝
+#  ╚████╔╝ ███████║  ███╔╝ 
+#   ╚██╔╝  ╚════██║ ███╔╝  
+#    ██║        ██║███████╗
+#    ╚═╝        ╚═╝╚══════╝
+# zsh for WSL
+# Copy and add this file to: ~/.bashrc
+#
+# Need to install:
+#	exa - better ls
+#	nvm - for `node.js` management
+#	cargo - for `rust` programming
+#	xfce4 utilities - for a prompt like Linux apps in a GUI form
+#	neofetch - beautiful terminal print
+#	lolcat - beautiful neofetch
+#	nala - beautiful `apt` alternative
+#
+# Can install:
+#	starship prompt - very good terminal prompt
+#
+# Important: Change in the variable bellow to your WINDOWS user name
+
+user_name_windows="Yaniv Zalach"
+
+# Enable colors and change prompt:
+autoload -U colors && colors
+PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+# Starship prompt
+if command -v starship &> /dev/null; then
+	eval "$(starship init zsh)"
+fi
+
+# NVM - nodejs
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Rust cargo
+. "$HOME/.cargo/env"
+
+# For the xming server - windows
+export DISPLAY=:0 
+
+# Custom Variables
+EDITOR=nvim
+
+# History in cache directory:
+export HISTSIZE=10000
+export SAVEHIST=10000
+export HISTFILE=~/.cache/zshhistory
+setopt appendhistory
+
+# Removing bell
+setopt NO_BEEP
+
+# Basic auto/tab complete:
+autoload -U compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+compinit
+_comp_options+=(globdots)               # Include hidden files.
+
+# zsh-syntax-highlighting
+# How to:
+#	cd && mkdir .zsh_high
+#	cd .zsh_high
+#	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+#
+#-Source the highlighting at the end of the file
+##################################################################################
+
+# Aliases
+# LS (exa - rust version of ls)
+alias ls='exa -al --color=always --group-directories-first'
+alias ll='ls -alF'
+alias la='ls -A'
+alias dir='dir --color=auto'
+# GREP (with color)
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+# Specific alias for windows
+alias Wpwsh="powershell.exe"
+alias pwsh="pwsh.exe"
+alias ch="cd '/mnt/c/Users/$user_name_windows'"
+alias apps='setsid xfce4-appfinder'
+# Os
+alias sd='sudo shutdown -h now'
+alias u_u='sudo nala update && sudo nala upgrade'
+alias clean='clear;neofetch | lolcat'
+# Yaniv's codes
+alias us_il="python3 ~/.config/us_to_il/init.py"
+
+neofetch --ascii_distro Venom --ascii_colors 1 2 3
+
+##################################################################################
+#-Source the highlighting at the end of the file
+source ~/.zsh_high/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
