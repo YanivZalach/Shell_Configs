@@ -12,24 +12,22 @@ This repository houses configuration files for three popular Unix-like shells: `
 
 - **fish** 🐟 - A bit different from `bash` and `zsh`, but lightning-fast and comes with syntax highlighting and autocompletion right out of the box! I have added some vibrant color and useful aliases 🌟.
 
-All of these shells come with a default prompt, but you also have the option to use the fantastic `starship` prompt if you prefer ✨.
+All of these shells come with a default prompt, but you also have the option to use the fantastic `starship` prompt if you prefer(except of the bash for arch Linux config) ✨.
 
 ## Overview 📂
 
 This repository is thoughtfully organized based on both shell and distribution:
 
 🐢 **bash**:
-   - Configurations for `WSL` 🪟
+   - Configurations for `WSL`/`Linux-Mint`/`Ubuntu` based distributions 🪟
    - Configurations for `Arch` based distributions 🐧
-   - Configurations for `Linux-Mint`/`Ubuntu` based distributions 🍃
 
 🚀 **zsh**:
    - Configurations for `WSL` 🪟
 
 🐟 **fish**:
-   - Configurations for `WSL` 🪟
+   - Configurations for `WSL`/`Linux-Mint`/`Ubuntu` based distributions 🪟
    - Configurations for `Arch` based distributions 🐧
-   - Configurations for `Linux-Mint`/`Ubuntu` based distributions 🍃
 
 ## How to Get Your Hands on the Configuration Files 🤲
 
