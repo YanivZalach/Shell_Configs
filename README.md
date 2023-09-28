@@ -38,3 +38,7 @@ This repository is thoughtfully organized based on both shell and distribution:
 3. Once you're in the shell directory, select your distribution, and voila! You'll find your desired configuration file. Simply copy it and follow the instructions at the top of the file to set it up.
 
 Feel free to explore and enhance your shell experience with these configurations! 🔍🔧🚀
+
+## Acknowledgments 🙏
+
+A special thanks to the Linux community for their support.
