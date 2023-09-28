@@ -25,8 +25,6 @@ This repository is thoughtfully organized based on both shell and distribution:
 
 🚀 **zsh**:
    - Configurations for `WSL` 🪟
-   - Configurations for `Arch` based distributions 🐧
-   - Configurations for `Linux-Mint`/`Ubuntu` based distributions 🍃
 
 🐟 **fish**:
    - Configurations for `WSL` 🪟
