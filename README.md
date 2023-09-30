@@ -12,7 +12,7 @@ This repository houses configuration files for three popular Unix-like shells: `
 
 - **fish** 🐟 - A bit different from `bash` and `zsh`, but lightning-fast and comes with syntax highlighting and autocompletion right out of the box! I have added some vibrant color and useful aliases 🌟.
 
-All of these shells come with a default prompt, but you also have the option to use the fantastic `starship` prompt if you prefer(except of the bash for arch Linux config) ✨.
+All of these shells are in `vi` mode, and come with a default prompt, but you also have the option to use the fantastic `starship` prompt if you prefer(except of the bash for arch Linux config) ✨.
 
 ## Overview 📂
 

@@ -46,6 +46,9 @@ export DISPLAY=:0
 # History limit
 export HISTSIZE=750
 
+# Vi mode
+set -o vi
+
 # Aliases
 # LS (exa - rust version of ls)
 alias ls='exa -al --color=always --group-directories-first'

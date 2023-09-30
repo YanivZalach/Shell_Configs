@@ -242,6 +242,9 @@ bash_prompt() {
 ##  MAIN  ## 
 ################################################################################
 
+# Vi mode
+set -o vi
+
 PROMPT_COMMAND=bash_prompt_command
 
 bash_prompt

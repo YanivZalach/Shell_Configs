@@ -70,6 +70,9 @@ _comp_options+=(globdots)               # Include hidden files.
 #-Source the highlighting at the end of the file
 ##################################################################################
 
+# Vi mode
+bindkey -v
+
 # Aliases
 # LS (exa - rust version of ls)
 alias ls='exa -al --color=always --group-directories-first'

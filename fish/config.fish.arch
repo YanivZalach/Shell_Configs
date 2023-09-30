@@ -68,6 +68,10 @@ set fish_pager_color_prefix white --bold --underline
 set fish_pager_color_progress brwhite --background=cyan
 set fish_color_search_match --background="#60AEFF"
 
+# Vi mode
+function fish_user_key_bindings
+	fish_vi_key_bindings
+end
 
 # Aliases and other settings
 if test -s /usr/share/autojump/autojump.fish
