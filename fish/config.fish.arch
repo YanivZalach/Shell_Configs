@@ -8,6 +8,9 @@
 # Copy and add this file to: ~/.config/fish/config.fish
 #
 # Need to install:
+#	pandoc - documents type translator(sudo pacman -S pandoc)
+#	latex - math markup language(sudo pacman -S texlive)
+#	zathura - pdf reader
 #	exa - better ls
 #	neofetch - beautiful terminal print
 #	lolcat - beautiful neofetch
@@ -78,8 +81,20 @@ if test -s /usr/share/autojump/autojump.fish
     . /usr/share/autojump/autojump.fish
 end
 
+# Better cd
 function cd
     builtin cd $argv; and ls
+end
+
+# Convert Markdown to PDF and open with Zathura
+function md2pdf
+    if test -z $argv
+        echo "Usage: md2pdf <input_markdown_file>"
+        return 1
+    end
+
+    set input_file $argv[1]
+    pandoc -f markdown -t pdf $input_file | zathura -
 end
 
 # LS (exa - ls with color)

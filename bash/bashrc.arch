@@ -8,6 +8,9 @@
 # Copy and add this file to: ~/.bashrc
 #
 # Need to install:
+#	pandoc - documents type translator(sudo pacman -S pandoc)
+#	latex - math markup language(sudo pacman -S texlive)
+#	zathura - pdf reader
 #	exa - better ls
 #	nvm - for `node.js` management
 #	cargo - for `rust` programming
@@ -252,12 +255,24 @@ unset bash_prompt
 
 #autojump: to use write j and dir
 [[ -s /usr/share/autojump/autojump.sh ]] && . /usr/share/autojump/autojump.sh
+
+# Convert markdown to pdf and open with zathura
+md2pdf() {
+    if [ -z "$1" ]; then
+        echo "Usage: md2pdf <input_markdown_file>"
+        return 1
+    fi
+
+    input_file="$1"
+    pandoc -f markdown -t pdf "$input_file" | zathura -
+}
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+
     alias ls='exa -al --color=always --group-directories-first'
     alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
 
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
