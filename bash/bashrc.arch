@@ -257,7 +257,7 @@ unset bash_prompt
 [[ -s /usr/share/autojump/autojump.sh ]] && . /usr/share/autojump/autojump.sh
 
 # Convert markdown to pdf and open with zathura
-md2pdf() {
+md2preview() {
     if [ -z "$1" ]; then
         echo "Usage: md2pdf <input_markdown_file>"
         return 1

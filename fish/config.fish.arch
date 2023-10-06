@@ -87,7 +87,7 @@ function cd
 end
 
 # Convert Markdown to PDF and open with Zathura
-function md2pdf
+function md2preview
     if test -z $argv
         echo "Usage: md2pdf <input_markdown_file>"
         return 1
