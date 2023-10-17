@@ -16,6 +16,7 @@
 #	cargo - for `rust` programming
 #	neofetch - beautiful terminal print
 #	lolcat - beautiful neofetch
+#	fd - nicer find
 
 bash_prompt_command() {
 	# How many characters of the $PWD should be kept
