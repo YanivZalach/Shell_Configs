@@ -285,6 +285,7 @@ alias la='ls -A'
 alias l='ls -CF'
 alias sd='sudo shutdown -h now'
 alias tmux="tmux -u"
+alias openvi='tmux new-session "fd -H -d 8 -t f -E .git | fzf --reverse | xargs nvim" \; attach'
 alias u_u='sudo pacman -Syu'
 alias lpdf='libreoffice --convert-to "pdf"'
 

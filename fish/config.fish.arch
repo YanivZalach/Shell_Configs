@@ -105,6 +105,7 @@ alias dir 'dir --color=auto'
 
 # OS
 alias tmux 'tmux -u'
+alias openvi 'tmux new-session "fd -H -d 7 -t f -E .git | fzf --reverse | xargs nvim" \; attach'
 alias sd 'sudo shutdown -h now'
 alias clean 'clear;neofetch | lolcat'
 alias u_u 'sudo pacman -Syu'

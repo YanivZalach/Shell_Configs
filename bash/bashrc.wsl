@@ -68,5 +68,9 @@ alias apps='setsid xfce4-appfinder'
 alias sd='sudo shutdown -h now'
 alias u_u='sudo nala update && sudo nala upgrade'
 alias clean='clear;neofetch | lolcat'
+# Tmux
+alias tmux='tmux -u'
+alias openvi='tmux new-session "fd -H -d 7 -t f -E .git | fzf --reverse | xargs nvim" \; attach'
+
 
 neofetch --ascii_distro
