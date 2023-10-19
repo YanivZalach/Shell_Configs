@@ -86,9 +86,10 @@ if test -s /usr/share/autojump/autojump.fish
     . /usr/share/autojump/autojump.fish
 end
 
-function cd
-    builtin cd $argv; and ls
-end
+# Better cd - Not remembering to cdh
+#function cd
+#    builtin cd $argv; and ls
+#end
 
 # LS (exa - ls with color)
 alias ls 'exa -al --color=always --group-directories-first'

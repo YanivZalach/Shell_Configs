@@ -82,10 +82,10 @@ if test -s /usr/share/autojump/autojump.fish
     . /usr/share/autojump/autojump.fish
 end
 
-# Better cd
-function cd
-    builtin cd $argv; and ls
-end
+# Better cd - Not remembering to cdh
+#function cd
+#    builtin cd $argv; and ls
+#end
 
 # Convert Markdown to PDF and open with Zathura
 function md2preview
