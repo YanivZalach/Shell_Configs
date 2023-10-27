@@ -11,6 +11,7 @@
 #	pandoc - documents type translator(sudo pacman -S pandoc)
 #	latex - math markup language(sudo pacman -S texlive)
 #	zathura - pdf reader
+#	sxiv - image viewer
 #	exa - better ls
 #	neofetch - beautiful terminal print
 #	lolcat - beautiful neofetch
@@ -109,6 +110,7 @@ alias tmux 'tmux -u'
 alias openvi 'tmux new-session "fd -H -d 7 -t f -E .git | fzf --reverse | xargs nvim" \; attach'
 alias nv 'nvim'
 alias vi 'nvim'
+alias show 'sxiv'
 alias sd 'sudo shutdown -h now'
 alias clean 'clear;neofetch | lolcat'
 alias u_u 'sudo pacman -Syu'
