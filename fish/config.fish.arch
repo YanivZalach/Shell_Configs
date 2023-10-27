@@ -12,6 +12,7 @@
 #	latex - math markup language(sudo pacman -S texlive)
 #	zathura - pdf reader
 #	sxiv - image viewer
+#	xclip - cli to clipboard
 #	exa - better ls
 #	neofetch - beautiful terminal print
 #	lolcat - beautiful neofetch
