@@ -109,6 +109,7 @@ alias dir 'dir --color=auto'
 # OS
 alias tmux 'tmux -u'
 alias openvi 'tmux new-session "fd -H -d 7 -t f -E .git | fzf --reverse | xargs nvim" \; attach'
+alias op 'tmux new-session "fd -H -d 7 -t f -E .git | fzf --reverse | xargs nvim" \; attach'
 alias nv 'nvim'
 alias vi 'nvim'
 alias show 'sxiv'
