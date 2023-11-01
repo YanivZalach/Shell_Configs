@@ -17,6 +17,7 @@
 #	neofetch - beautiful terminal print
 #	lolcat - beautiful neofetch
 #	fd - nicer find
+#	btop - nice htop
 #
 # Can install:
 #	starship prompt - very good terminal prompt
@@ -118,7 +119,8 @@ alias sd 'sudo shutdown -h now'
 alias clean 'clear;neofetch | lolcat'
 alias u_u 'sudo pacman -Syu'
 alias lpdf 'libreoffice --convert-to "pdf"'
-alias tree 'tree -ha'
+alias tree 'tree -haC'
+alias btop ' btop --utf-force'
 
 # Display system information using neofetch
 neofetch
