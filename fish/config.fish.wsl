@@ -99,7 +99,14 @@ alias dir 'dir --color=auto'
 
 # OS
 alias tmux 'tmux -u'
-alias openvi='tmux new-session "find -maxdepth 7  -type f -not -path \'*/.git/*\' | fzf --reverse | xargs nvim" \; attach'
+# Fuzzy find
+#	Nvim inside tmux session
+alias openvi 'tmux new-session "find -maxdepth 7  -type f -not -path \'*/.git/*\' | fzf --reverse | xargs nvim" \; attach'
+alias op 'tmux new-session "find -maxdepth 7  -type f -not -path \'*/.git/*\' | fzf --reverse | xargs nvim" \; attach'
+#	Nvim
+alias opn 'fd -H -d 7 -t f -E .git | fzf --reverse | xargs nvim'
+# Open the Dir of the chosen file
+alias ocd 'cd "$(fd -H -d 7 -t f -E .git | fzf --reverse | xargs -I % dirname "%")"'
 alias sd 'sudo shutdown -h now'
 alias nv 'nvim'
 alias clean 'clear;neofetch | lolcat'

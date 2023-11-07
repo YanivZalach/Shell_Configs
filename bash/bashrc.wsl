@@ -66,11 +66,18 @@ alias ch="cd '/mnt/c/Users/$user_name_windows'"
 alias apps='setsid xfce4-appfinder'
 # Os
 alias nv='nvim'
+# Fuzzy find
+#	Nvim inside tmux session
+alias openvi='tmux new-session "find -maxdepth 7 -type d -name .git -prune -o -type f -print | fzf --reverse | xargs nvim"'
+alias op='tmux new-session "find -maxdepth 7 -type d -name .git -prune -o -type f -print | fzf --reverse | xargs nvim"'
+#	Nvim
+alias opn='fd -H -d 7 -t f -E .git | fzf --reverse | xargs nvim'
+# Open the Dir of the chosen file
+alias ocd='cd "$(fd -H -d 7 -t f -E .git | fzf --reverse | xargs -I % dirname "%")"'
 alias sd='sudo shutdown -h now'
 alias u_u='sudo nala update && sudo nala upgrade'
 alias clean='clear;neofetch | lolcat'
 # Tmux
 alias tmux='tmux -u'
-alias openvi='tmux new-session "find -maxdepth 7 -type d -name .git -prune -o -type f -print | fzf --reverse | xargs nvim"'
 
 neofetch --ascii_distro

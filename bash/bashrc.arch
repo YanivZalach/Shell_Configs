@@ -287,7 +287,14 @@ alias l='ls -CF'
 alias nv='nvim'
 alias sd='sudo shutdown -h now'
 alias tmux="tmux -u"
+# Fuzzy find
+#	Nvim inside tmux session
 alias openvi='tmux new-session "fd -H -d 8 -t f -E .git | fzf --reverse | xargs nvim" \; attach'
+alias op='tmux new-session "fd -H -d 7 -t f -E .git | fzf --reverse | xargs nvim" \; attach'
+#	Nvim
+alias opn='fd -H -d 7 -t f -E .git | fzf --reverse | xargs nvim'
+# Open the Dir of the chosen file
+alias ocd='cd "$(fd -H -d 7 -t f -E .git | fzf --reverse | xargs -I % dirname "%")"'
 alias u_u='sudo pacman -Syu'
 alias lpdf='libreoffice --convert-to "pdf"'
 
