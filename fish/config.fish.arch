@@ -43,6 +43,8 @@ set -gx PATH $HOME/.local/bin $PATH
 set -gx PATH $HOME/Documents/bash_script $PATH
 set -gx HISTSIZE 750
 
+# Setting locale
+export LANG=en_US.UTF-8
 
 # Colors of the text
 set fish_color_autosuggestion "#969896"
@@ -126,7 +128,6 @@ alias clean 'clear;neofetch | lolcat'
 alias u_u 'sudo pacman -Syu'
 alias lpdf 'libreoffice --convert-to "pdf"'
 alias tree 'tree -haC'
-alias btop ' btop --utf-force'
 
 # Display system information using neofetch
 neofetch

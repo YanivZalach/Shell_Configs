@@ -28,11 +28,6 @@ bash_prompt_command() {
 	# Store local dir
 	local dir=${PWD##*/}
 	
-	#my editor
-	export EDITOR=vim
-	export VISUAL=vim
-	export BROWSER=brave
-
 	# Which length to use
 	pwdmaxlen=$(( ( pwdmaxlen < ${#dir} ) ? ${#dir} : pwdmaxlen ))
 
@@ -253,6 +248,12 @@ PROMPT_COMMAND=bash_prompt_command
 
 bash_prompt
 unset bash_prompt
+
+#my editor
+export EDITOR=vim
+export VISUAL=vim
+export BROWSER=brave
+export LANG=en_US.UTF-8
 
 #autojump: to use write j and dir
 [[ -s /usr/share/autojump/autojump.sh ]] && . /usr/share/autojump/autojump.sh
