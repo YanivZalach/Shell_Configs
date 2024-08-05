@@ -110,6 +110,7 @@ alias ocd 'cd (fdfind -H -d 7 -t f -E .git | fzf --reverse | xargs -I % dirname 
 alias sd 'sudo shutdown -h now'
 alias nv 'nvim'
 alias clean 'clear;neofetch | lolcat'
+alias cls 'clear'
 alias u_u 'sudo nala update && sudo nala upgrade'
 alias lpdf 'libreoffice --convert-to "pdf"'
 alias tree 'tree -haC'
